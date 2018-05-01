@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--FridgeMate-->
+        <!--Home-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController storyboardIdentifier="HomeViewController" id="BYZ-38-t0r" customClass="HomeViewController" customModule="Fridge2" customModuleProvider="target" sceneMemberID="viewController">
@@ -21,8 +21,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="iPhone 8 Copy 9" translatesAutoresizingMaskIntoConstraints="NO" id="E7O-0n-rnr">
-                                <rect key="frame" x="0.0" y="-2" width="320" height="570"/>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="Anotha" translatesAutoresizingMaskIntoConstraints="NO" id="Eh8-y5-cf4">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q19-4Y-oHc">
@@ -35,6 +35,9 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GYY-nF-BQI">
                                 <rect key="frame" x="164" y="514" width="156" height="56"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="deleteFoodBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IZy-cg-4B5"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VeW-tA-RGP">
                                 <rect key="frame" x="184" y="131" width="94" height="80"/>
@@ -87,7 +90,7 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" title="FridgeMate" id="IJj-nR-KUB"/>
+                    <navigationItem key="navigationItem" title="Home" id="IJj-nR-KUB"/>
                     <connections>
                         <outlet property="BottomLeftFoodBtn" destination="qCV-l6-Cxb" id="11K-1U-wAI"/>
                         <outlet property="BottomRightFoodBtn" destination="DJe-Js-tMd" id="ujT-0w-KN2"/>
@@ -95,6 +98,7 @@
                         <outlet property="MiddleRightFoodBtn" destination="hX0-32-FyI" id="EUG-pk-ThU"/>
                         <outlet property="TopLeftFoodBtn" destination="DFI-m9-4V6" id="1xp-ZO-vfx"/>
                         <outlet property="TopRightFoodBtn" destination="VeW-tA-RGP" id="p1t-aZ-d9d"/>
+                        <outlet property="deleteFoodBtn" destination="GYY-nF-BQI" id="LcO-5D-Wgv"/>
                         <outlet property="getRecipe" destination="q19-4Y-oHc" id="NwR-rl-yWn"/>
                     </connections>
                 </viewController>
@@ -114,31 +118,58 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Recipe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kZG-ox-eFM">
-                                <rect key="frame" x="118" y="28" width="85" height="58"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WyN-x9-aPd">
-                                <rect key="frame" x="51" y="141" width="152" height="43"/>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="anotha1" translatesAutoresizingMaskIntoConstraints="NO" id="eKY-Nf-KJJ">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="13k-bK-uJW">
+                                <rect key="frame" x="51" y="77" width="216" height="43"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="wNW-DK-fbC">
+                                <rect key="frame" x="0.0" y="128" width="320" height="378"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PlainCell" id="Ujf-UZ-bBU">
+                                        <rect key="frame" x="0.0" y="55.5" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ujf-UZ-bBU" id="3BX-DU-F6y">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Rx3-LV-h0t" id="tmt-lA-AQn"/>
+                                </connections>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PBa-Hq-V8I">
+                                <rect key="frame" x="0.0" y="514" width="164" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="useAllIngredientsBtnPressed:" destination="Rx3-LV-h0t" eventType="touchUpInside" id="9bi-ah-tm0"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h2p-Qb-aNY">
+                                <rect key="frame" x="172" y="514" width="148" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="FoodPassedLbl" destination="WyN-x9-aPd" id="Fcp-3R-1xB"/>
-                        <outlet property="Label" destination="kZG-ox-eFM" id="6Lh-Vl-IUS"/>
+                        <outlet property="recipeTitle" destination="13k-bK-uJW" id="zTY-W0-qUQ"/>
+                        <outlet property="recipe_table_view" destination="wNW-DK-fbC" id="b6Y-qg-OJH"/>
+                        <outlet property="useAllIngredientsBtn" destination="PBa-Hq-V8I" id="3Ek-TU-kSQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UuJ-ae-3Wc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1623.75" y="31.690140845070424"/>
+            <point key="canvasLocation" x="1624" y="56"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="0ua-Fa-4Fh">
@@ -160,6 +191,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="iPhone 8 Copy 9" width="320" height="568"/>
+        <image name="Anotha" width="320" height="568"/>
+        <image name="anotha1" width="320" height="568"/>
     </resources>
 </document>

@@ -13,7 +13,9 @@ class HomeViewController: UIViewController {
     
     
     var foodToPass = [String]()
+    var food = [String]()
 
+    @IBOutlet weak var deleteFoodBtn: UIButton!
     @IBOutlet weak var getRecipe: UIButton!
     @IBOutlet weak var TopRightFoodBtn: UIButton!
     @IBOutlet weak var MiddleRightFoodBtn: UIButton!
@@ -49,6 +51,29 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(TopLeftFoodBtn.isSelected)
+        for x in food {
+            print ("Here")
+            print(x)
+            if (x == TopRightFoodBtn.currentTitle){
+                TopRightFoodBtn.setTitle("", for: .normal)
+            }
+            else if (x == TopLeftFoodBtn.currentTitle){
+                TopLeftFoodBtn.setTitle("", for: .normal)
+            }
+            else if (x == MiddleLeftFoodBtn.currentTitle){
+                MiddleLeftFoodBtn.setTitle("", for: .normal)
+            }
+            else if (x == MiddleRightFoodBtn.currentTitle){
+                MiddleRightFoodBtn.setTitle("", for: .normal)
+            }
+            else if (x == BottomLeftFoodBtn.currentTitle){
+                BottomLeftFoodBtn.setTitle("", for: .normal)
+            }
+            else if (x == BottomRightFoodBtn.currentTitle){
+                BottomRightFoodBtn.setTitle("", for: .normal)
+            }
+        }
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -112,6 +137,28 @@ class HomeViewController: UIViewController {
             BottomRightFoodBtn.isSelected = true
         }
     }
+    
+    @IBAction func deleteFoodBtnPressed(_ sender: Any) {
+        if (TopRightFoodBtn.isSelected == true){
+            TopRightFoodBtn.setTitle("", for: .normal)
+        }
+        if (TopLeftFoodBtn.isSelected == true){
+            TopLeftFoodBtn.setTitle("", for: .normal)
+        }
+        if (MiddleLeftFoodBtn.isSelected == true){
+            MiddleLeftFoodBtn.setTitle("", for: .normal)
+        }
+        if (MiddleRightFoodBtn.isSelected == true){
+            MiddleRightFoodBtn.setTitle("", for: .normal)
+        }
+        if (BottomLeftFoodBtn.isSelected == true){
+            BottomLeftFoodBtn.setTitle("", for: .normal)
+        }
+        if (BottomRightFoodBtn.isSelected == true){
+            BottomRightFoodBtn.setTitle("", for: .normal)
+        }
+    }
+    
     
     
 }

@@ -91,6 +91,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3174DAA674DFBBDC210BD058 /* Pods_Fridge2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fridge2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7813997120912FB600134826 /* Fridge2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fridge2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7813997420912FB600134826 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7813997620912FB600134826 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -114,12 +115,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		275C771BEF762592B9E9F19F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3174DAA674DFBBDC210BD058 /* Pods_Fridge2.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		7813996820912FB600134826 = {
 			isa = PBXGroup;
 			children = (
 				789B3AEA2092C3A300D53AA0 /* Alamofire.xcodeproj */,
 				7813997320912FB600134826 /* Fridge2 */,
 				7813997220912FB600134826 /* Products */,
+				275C771BEF762592B9E9F19F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -317,7 +327,8 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "";
+			shellScript = "
+";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
